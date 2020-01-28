@@ -19,7 +19,7 @@
 				<!-- TODO1 ここにメッセージ入力フォームを追加 -->
 				<input id="message" placeholder="メッセージ">
 				<!-- TODO1 ここに送信ボタンを追加 -->
-				<button id=“send” >投稿</button>
+				<button id=“send”>投稿</button>
 			</p>
 			
 		</div>
@@ -53,10 +53,10 @@
 			});
 			// TODO2 送信ボタンが押された時の処理
 			$('#send').click(function() {
-				messagesRef.add({
-					name: $('#name').val(),
-					body: $('#message').val()
-				});
+				//messagesRef.add({
+				//	name: $('#name').val(),
+				//	body: $('#message').val()
+				//});
 				$('<p>追加しました</p>').appendTo('#messages');
 			});
 			
