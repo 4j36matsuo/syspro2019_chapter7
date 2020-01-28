@@ -18,6 +18,7 @@
 				<input id="name" placeholder="名前">
 				<!-- TODO1 ここにメッセージ入力フォームを追加 -->
 				<input id="message" placeholder="メッセージ">
+				<input type="datetime-local" id="datetime">
 				<!-- TODO1 ここに送信ボタンを追加 -->
 				<button id="send">投稿</button>
 			</p>
@@ -25,7 +26,17 @@
 		</div>
 		<script>
 			// TODO0 ここに設定情報を貼り付ける  
-
+			var firebaseConfig = {
+				apiKey: "AIzaSyDHpIh77gzibukQfCu3XNI-Be7O3DNXEwk",
+				authDomain: "chapter7-s16175.firebaseapp.com",
+				databaseURL: "https://chapter7-s16175.firebaseio.com",
+				projectId: "chapter7-s16175",
+				storageBucket: "chapter7-s16175.appspot.com",
+				messagingSenderId: "816179598315",
+				appId: "1:816179598315:web:39a40b9eebafe3b0667fae"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
 	
 			
 			// データベースの参照を準備
@@ -46,6 +57,7 @@
 				messagesRef.add({
 					name: $('#name').val(),
 					body: $('#message').val()
+					date: $('#datetime').val()
 				});
 				$('<p>追加しました</p>').appendTo('#messages');
 			});
